@@ -1,7 +1,7 @@
 // import Contries from './teplates/contries.hbs';
 import './css/styles.css';
-import { refs } from './refs';
 import fetchCountries from './fetchCountries';
+import { refs } from './refs';
 import {
   createmarkUpOfOneCountry,
   createListOfContries,
