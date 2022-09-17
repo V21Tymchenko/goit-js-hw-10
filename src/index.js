@@ -1,7 +1,7 @@
 // import Contries from './teplates/contries.hbs';
 import './css/styles.css';
 import fetchCountries from './fetchCountries';
-import { refs } from './refs';
+// import { refs } from './refs';
 import {
   createmarkUpOfOneCountry,
   createListOfContries,
@@ -11,6 +11,12 @@ import debounce from 'lodash.debounce';
 // console.log(debounce);
 
 const DEBOUNCE_DELAY = 300;
+
+export const refs = {
+  input: document.querySelector('#search-box'),
+  ul: document.querySelector('.country-list'),
+  div: document.querySelector('.country-info'),
+};
 
 refs.input.addEventListener(
   'input',
