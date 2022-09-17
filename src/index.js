@@ -12,7 +12,7 @@ import debounce from 'lodash.debounce';
 
 const DEBOUNCE_DELAY = 300;
 
-export const refs = {
+const refs = {
   input: document.querySelector('#search-box'),
   ul: document.querySelector('.country-list'),
   div: document.querySelector('.country-info'),
