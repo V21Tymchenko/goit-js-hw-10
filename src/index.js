@@ -24,7 +24,7 @@ refs.input.addEventListener(
 );
 
 function createMarkUpCountries(event) {
-  searchQuery = event.target.value;
+  let searchQuery = event.target.value;
   if (searchQuery.trim() === '') {
     refs.div.innerHTML = '';
     refs.ul.innerHTML = '';
