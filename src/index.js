@@ -26,8 +26,9 @@ refs.input.addEventListener(
 function createMarkUpCountries(event) {
   let searchQuery = event.target.value;
   if (searchQuery.trim() === '') {
-    refs.div.innerHTML = '';
-    refs.ul.innerHTML = '';
+    // refs.div.innerHTML = '';
+    // refs.ul.innerHTML = '';
+    upgradeMukrUp();
     return;
   }
   fetchCountries(searchQuery)
@@ -36,19 +37,22 @@ function createMarkUpCountries(event) {
         const listMarkup = contries.map(country =>
           createListOfContries(country)
         );
-        refs.ul.innerHTML = listMarkup.join('');
-        refs.div.innerHTML = '';
+        // refs.ul.innerHTML = listMarkup.join('');
+        //   refs.div.innerHTML = '';
+        const ofList = listMarkup.join('');
+        upgradeMukrUp('', ofList);
       }
       if (contries.length === 1) {
         const allInfoMarkUp = contries.map(country =>
           createmarkUpOfOneCountry(country)
         );
-        refs.div.innerHTML = allInfoMarkUp.join('');
-        refs.ul.innerHTML = '';
+        // refs.div.innerHTML = allInfoMarkUp.join('');
+        //   refs.ul.innerHTML = '';
+        const ofInfo = allInfoMarkUp.join('');
+        upgradeMukrUp(ofInfo, '');
       }
       if (contries.length > 10) {
-        refs.div.innerHTML = '';
-        refs.ul.innerHTML = '';
+        upgradeMukrUp();
         Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
@@ -60,4 +64,9 @@ function createMarkUpCountries(event) {
       //   refs.countryList.innerHTML = '';
       return error;
     });
+}
+
+function upgradeMukrUp(elementFirst = '', elementSecond = '') {
+  refs.div.innerHTML = elementFirst;
+  refs.ul.innerHTML = elementSecond;
 }
